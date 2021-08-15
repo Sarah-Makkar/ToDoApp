@@ -4,7 +4,12 @@ import React, { Component } from 'react'
 export default class list extends Component {
     
     render() {
-        var storage= JSON.parse(localStorage.getItem('items'));    
+        var storage= JSON.parse(localStorage.getItem('items')); 
+        if(storage === null) {
+            return (
+                <div></div>
+            )
+        }   
         console.log(storage);  
     const {handleDelete, handleComplete} = this.props
     const isStrike = (id) => {
